@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>1bcremonablog app</title>
+  <meta name="application-name" content="1bcremonablog app">
+  <meta name="author" content="Nicolò Valenza">
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/7.15.2/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/7.15.2/firebase-auth.js"></script>
+  <script defer src="/__/firebase/7.15.2/firebase-database.js"></script>
+  <script defer src="/__/firebase/7.15.2/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/7.15.2/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <link rel="stylesheet" href="stylesheets/style1.css">
+  <link rel="stylesheet" href="stylesheets/style_rss.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="manifest" href="manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
+  <script type="module" src="js/sw-register.js">
+  </script>
+  <link rel="apple-touch-icon" href="images/icon57.png" />
+  <link rel="icon" href="images/favicon.ico">
+  <meta name="theme-color" content="#054560" />
+  <script src="https://unpkg.com/pwabuilder-components@latest"></script>
+  <script type="text/javascript" src="js/sharejs.js"></script>
+
+</head>
+
+<body>
+  <header>
+<div class="topbar">
+    <b>1bcremonablog app</b>
+    <!-- <pwb-share id="sharebut" title="share title" text="share text" url="https://microsoft.com"></pwb-share> -->
+    <button id="sharebut" onclick="share()">Condividi</button>
+</div>
+  </header>
+
+  <script type="text/javascript" src="js/parse_rss.js">
+    //rss parser
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      //firebase sdk per l'hosting del sito
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script>
+</body>
+
+</html>
