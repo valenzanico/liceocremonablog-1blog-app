@@ -26,3 +26,21 @@
 #sharebut:hover {
   background-color: #054560;
 }
+
+.androidapk {
+  background-color: #e4e4e4;
+  padding:15px;
+  border-radius: 6px;
+}
+.pwa {
+  background-color: #e4e4e4;
+  padding:15px;
+  border-radius: 6px;
+}
+
+.windowsexe {
+  background-color: #e4e4e4;
+  padding:15px;
+  border-radius: 6px;
+  border-widht:px;
+}
