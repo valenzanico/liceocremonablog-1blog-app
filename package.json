@@ -1,0 +1,23 @@
+{
+  "name": "1blog-app",
+  "version": "1.0.0",
+  "description": "l'applicazione pwa di 1bcremonablog.com",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eaglee0/1bcremonablog-app.git"
+  },
+  "keywords": [
+    "start"
+  ],
+  "author": "Nicolò Valenza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eaglee0/1bcremonablog-app/issues"
+  },
+  "homepage": "https://github.com/Eaglee0/1bcremonablog-app#readme"
+}
