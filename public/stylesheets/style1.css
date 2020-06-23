@@ -16,15 +16,11 @@
 #sharebut {
   position: absolute;
   right: 20px;
-  border-radius: 6px;
-  background-color: #0583b8;
   color: white;
-  padding: 8px;
   border: none;
 
 }
 #sharebut:hover {
-  background-color: #054560;
 }
 
 .androidapk {
@@ -43,4 +39,30 @@
   padding:15px;
   border-radius: 6px;
   border-widht:px;
+}
+.bordi {
+  padding: 15px
+}
+#downloadbut {
+  border-radius: 6px;
+  background-color: #0583b8;
+  color: white;
+  padding: 8px;
+  border: none;
+
+}
+#downloadbut:hover {
+  background-color: #054560;
+}
+
+.buttonstyle {
+  border-radius: 6px;
+  background-color: #0583b8;
+  color: white;
+  padding: 8px;
+  border: none;
+}
+
+.buttonstyle:hover {
+  background-color: #054560;
 }

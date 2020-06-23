@@ -1,7 +1,6 @@
 //questo codiceesgue il parsing del feed rss ddi 1bcremona blog per cedere i nuovi artcoli
 //this code parse the rrs feed or 1bcremonablog.com to control new article
 
-
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const rss_url = "https://1bcremonablog.com/feed/";
 fetch(proxyurl + rss_url)
@@ -12,15 +11,15 @@ fetch(proxyurl + rss_url)
     const items = data.querySelectorAll("item");
     let html = ``;
     items.forEach(el => {
+      var linkart = el.querySelector("link").innerHTML;
       html += `
-        <article>
+        <div class="article">
           <h1>
           ${el.querySelector("title").innerHTML}<br>
-            <a href="${el.querySelector("link").innerHTML}"><button id="openlink">Leggi l'articolo</button>
-            </a>
-          </h1>
-        </article>
-      `;
-    });
+          <a href="${linkart}">  <button id="openlink" onclick="sessionStorage.setItem('linkarticle1bcremonablog', '${linkart}')">Leggi l'articolo</button></a>
+            </h1>
+                    </div>`;
+        });
+
     document.body.insertAdjacentHTML("beforeend", html);
-  });
+    });

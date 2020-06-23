@@ -5,8 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>1bcremonablog app</title>
-  <meta name="application-name" content="1bcremonablog app">
-  <meta name="author" content="Nicolò Valenza">
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/7.15.2/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
@@ -16,17 +14,20 @@
   <script defer src="/__/firebase/7.15.2/firebase-storage.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
+  <script type="text/javascript">sessionStorage.removeItem("linkarticle1bcremonablog");</script>
   <link rel="stylesheet" href="stylesheets/style1.css">
   <link rel="stylesheet" href="stylesheets/style_rss.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <link rel="manifest" href="manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
-  <script type="module" src="js/sw-register.js">
+  <meta name="application-name" content="1bcremonablog app">
+  <meta name="author" content="Nicolò Valenza">
+  <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
+  <script type="module" src="/js/register-sw.js">
   </script>
-  <link rel="apple-touch-icon" href="images/icon57.png" />
-  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/icon57.png" />
+  <link rel="icon" href="/images/favicon.ico">
   <meta name="theme-color" content="#054560" />
   <script src="https://unpkg.com/pwabuilder-components@latest"></script>
-  <script type="text/javascript" src="js/sharejs.js"></script>
+  <script type="text/javascript" src="/js/sharejs.js"></script>
 
 </head>
 
@@ -34,7 +35,7 @@
   <header>
 <div class="topbar">
     <b>1bcremonablog app</b>
-    <pwb-share id="sharebut" title="share title" text="share text" url="https://microsoft.com"></pwb-share>
+    <pwb-share id="sharebut" title="condividi" text="condividi l'applicazione" url="app.1bcremonablog.com/installa"></pwb-share>
     <!-- <button id="sharebut" onclick="share()">Condividi</button> -->
 </div>
   </header>

@@ -2,29 +2,54 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Installa l'applicazione</title>
     <link rel="stylesheet" href="/stylesheets/style1.css">
+    <link rel="icon" href="/images/favicon.ico">
     <style media="screen">
       body {
         background-color: #054560;
+        font-family: sans-serif;
       }
     </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
+    <meta name="application-name" content="1bcremonablog app">
+    <meta name="author" content="Nicolò Valenza">
+    <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
+    <script type="module" src="/js/register-sw.js">
+    </script>
+    <link rel="apple-touch-icon" href="/images/icon57.png" />
+    <link rel="icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#054560" />
+    <script src="https://unpkg.com/pwabuilder-components@latest"></script>
+    <script type="module" src="/js/sharejs.js"></script>
+    <script type="text/javascript" src="/js/install.js"></script>
   </head>
   <body>
     <header>
       <h1 class="topbar">Installa l'app</h1>
     </header>
+    <div class="bordi">
     <div class="androidapk">
-      <h3>sacrica l'apk per android</h3>
-      <a href="/files/1bcremonablogapp.apk"><button>download</button></a>
+      <h3>scarica l'apk per android</h3>
+      <a href="media/1bcremonablogapp.apk"><button id="downloadbut">download</button></a>
     </div>
+    </div>
+    <div class="bordi">
     <div class="pwa">
       <h3>scarica la web app per iPhone, Android e Desktop</h3>
-      <pwa-install></pwa-install>
+      <div id="installContainer" class="hidden">
+  <button id="butInstall" class="buttonstyle" type="button">
+    Install
+  </button>
+</div>
     </div>
+    </div>
+    <div class="bordi">
     <div class="windowsexe">
       <h3>scarica il programma per windows</h3>
-      <a href="/files/1bcremonablogapp.exe"><button>download</button></a>
+      <a href="media/1cremonablog-app_Setup_1.0.0.exe"><button id="downloadbut">download</button></a>
+    </div>
     </div>
 
 
