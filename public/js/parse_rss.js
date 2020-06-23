@@ -12,11 +12,12 @@ fetch(proxyurl + rss_url)
     let html = ``;
     items.forEach(el => {
       var linkart = el.querySelector("link").innerHTML;
+      var titleart = el.querySelector("title").innerHTM;
       html += `
         <div class="article">
           <h1>
           ${el.querySelector("title").innerHTML}<br>
-          <a href="${linkart}">  <button id="openlink" onclick="sessionStorage.setItem('linkarticle1bcremonablog', '${linkart}')">Leggi l'articolo</button></a>
+          <a href="/articolo">  <button id="openlink" onclick="sessionStorage.setItem('titlearticle1bcremonablog', '${titleart}');sessionStorage.setItem('linkarticle1bcremonablog', '${linkart}')">Leggi l'articolo</button></a>
             </h1>
                     </div>`;
         });

@@ -2,9 +2,12 @@ var cacheName = '1bcremonablog-app';
 var filesToCache = [
 '/',
 '/index.html',
-'/css/stylesheet.css',
-'/images/pwa-logo.svg',
-'/js/core.js'
+'/articolo/index.html',
+'/js/register-sw.js',
+'/stylesheets/style1.css',
+'/stylesheets/reader.css',
+'/stylesheets/style_rss.css',
+'/manifest.json'
 ];
 /* Avvia il Service Worker e Memorizza il contenuto nella cache */
 self.addEventListener('install', function(e) {

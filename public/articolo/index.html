@@ -2,10 +2,27 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>leggi l'articolo</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reader.css">
+    <style media="screen">
+    </style>
+    <meta name="application-name" content="1bcremonablog app">
+    <meta name="author" content="Nicolò Valenza">
+    <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
+    <script type="module" src="/js/register-sw.js">
+    </script>
+    <link rel="apple-touch-icon" href="/images/icon57.png" />
+    <link rel="icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#054560" />
   </head>
   <body>
+    <header>
+      <div class="topbar">
+        <h1>Leggi l'articolo</h1>
+      </div>
+    </header>
     <script type="text/javascript" src="/js/parse_article.js">
     </script>
   </body>
