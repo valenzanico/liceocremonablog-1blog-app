@@ -9,7 +9,8 @@ fetch(proxyurl + url_art)
     var el = $('<div></div>');
     var art_page = el.html(data);
     let htmlpage;
-    htmlpage += `<div class="container-art"><div class="all-article">${$('.entry-content', art_page)[0].innerHTML}</div></div>`;
+    console.log($('.entry-content', art_page));
+    htmlpage += `<article><div class="all-article">${$('.entry-content', art_page)[0].innerHTML}</div></article>`;
     document.body.insertAdjacentHTML("beforeend", htmlpage);
     $("#jp-post-flair").remove();
     $("#text").remove();
