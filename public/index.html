@@ -47,29 +47,22 @@
     //rss parser
   </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      //firebase sdk per l'hosting del sito
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-      // // The Firebase SDK is initialized and available here!
-      //
-      // firebase.auth().onAuthStateChanged(user => { });
-      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-      // firebase.messaging().requestPermission().then(() => { });
-      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-      //
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-      try {
-        let app = firebase.app();
-        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-      }
-    });
-  </script>
-</body>
+ <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB1kzxeiNVCKDPvf1miTUtvBN4TZgrB4ME",
+    authDomain: "app.1bcremonablog.com",
+    databaseURL: "https://app1bcremonablog.firebaseio.com",
+    projectId: "app1bcremonablog",
+    storageBucket: "app1bcremonablog.appspot.com",
+    messagingSenderId: "60744686202",
+    appId: "1:60744686202:web:ab10cc6d91fac028f879c3",
+    measurementId: "G-NYQ520CHBB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+   </body>
 
 </html>

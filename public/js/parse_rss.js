@@ -3,7 +3,7 @@
 
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const rss_url = "https://1bcremonablog.com/feed/";
-fetch(proxyurl + rss_url)
+fetch(proxyurl+rss_url)
   .then(response => response.text())
   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
   .then(data => {
