@@ -15,8 +15,6 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
     <meta name="application-name" content="1bcremonablog app">
     <meta name="author" content="Nicolò Valenza">
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
     <script type="module" src="/js/register-sw.js">
     </script>
@@ -24,43 +22,12 @@
     <link rel="icon" href="/images/favicon.ico">
     <meta name="theme-color" content="#054560" />
     <script src="https://unpkg.com/pwabuilder-components@latest"></script>
-    <script type="module" src="/js/sharejs.js"></script>
     <script type="text/javascript" src="/js/install.js"></script>
   </head>
   <body>
-    <header>
-      <h1 class="topbar">Installa l'applicazione</h1>
-    </header>
-    <div class="bordi">
-    <div class="androidapk">
-      <h3>scarica l'apk per installare l'applicazione per android</h3>
-      <a href="media/1bcremonablogapp.apk"><button id="downloadbut">scarica</button></a>
-    </div>
-    </div>
-    <div class="bordi">
-    <div class="pwa">
-      <h3 style="margin-block-end: none;">installa l'app PWA per iPhone, Android e PC</h3><br>
-      <p>Per maggiori informazioni sulle pwa clicca <a href="#">qui</a></p>
-      <div id="installContainer" class="hidden">
-  <button id="butInstall" class="buttonstyle" type="button">
-    Installa
-  </button>
-</div>
-    </div>
-    </div>
-    <div class="bordi">
-    <div class="windowsexe">
-      <h3>scarica il programma per windows</h3>
-      <a href="media/1cremonablog-app_Setup_1.0.0.exe"><button id="downloadbut">scarica</button></a>
-    </div>
-    </div>
-
-    <div class="bordi">
-    <div class="github">
-      <h3>visualizza e scarica il codice sorgente dell'applicazione</h3>
-      <a href="https://github.com/Eaglee0/1blog-app"><button id="downloadbut">github</button></a>
-    </div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/js/installpage.js"> 
+     </script>
 
 
   </body>

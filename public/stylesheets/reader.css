@@ -42,6 +42,7 @@ body {
   position: absolute;
   right: 20px;
   color: white;
+  outline:none;
 }
 
 .buttonstyle:hover {

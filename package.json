@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Eaglee0/1bcremonablog-app/issues"
   },
-  "homepage": "https://github.com/Eaglee0/1bcremonablog-app#readme"
+  "homepage": "https://github.com/Eaglee0/1bcremonablog-app#readme",
+  "dependencies": {
+    "firebase-tools": "^8.6.0"
+  }
 }

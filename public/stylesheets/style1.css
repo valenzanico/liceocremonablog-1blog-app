@@ -18,9 +18,14 @@
   right: 20px;
   color: white;
   border: none;
+  outline:none;
+  background-color: #0583b8;
+  border-radius: 6px;
+  padding: 8px;
 
 }
 #sharebut:hover {
+  background-color: #054560;
 }
 
 .androidapk {
@@ -55,6 +60,7 @@
   color: white;
   padding: 8px;
   border: none;
+  outline:none;
 
 }
 #downloadbut:hover {
@@ -67,6 +73,7 @@
   color: white;
   padding: 8px;
   border: none;
+  outline:none;
 }
 
 .buttonstyle:hover {
