@@ -3,19 +3,18 @@
 	"name" : "1bcremonablog app",
 	"icons" : [
 		{
-			"src": "https://app.1bcremonablog.com/images/icon192.png",
+			"src": "/images/icon192.png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "https://app.1bcremonablog.com/images/icon512.png",
+			"src": "/images/icon512.png",
 			"sizes": "512x512"
 		}],
-	"start_url" : "https://app.1bcremonablog.com",
+	"start_url" : "/",
 	"background_color" : "#054560",
 	"display" : "standalone",
 	"scope" : "/",
 	"theme_color" : "#054560",
-	"url" : "https://app.1bcremonablog.com",
 	"lang" : "Italian",
 	"screenshots" : [],
 	"orientation" : "any",

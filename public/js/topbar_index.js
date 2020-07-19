@@ -1,4 +1,5 @@
 function topbar(){
+    var ciao = "ciao cioa"
     var topbarel = document.getElementById("root");
     var topbarhtml = `
     <div class="topbar">

@@ -3,6 +3,8 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
   });
 };
+
+
 self.addEventListener('install', (event) => {
   console.log('👷', 'install', event);
   self.skipWaiting();

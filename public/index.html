@@ -22,8 +22,8 @@
   <meta name="application-name" content="1bcremonablog app">
   <meta name="author" content="Nicolò Valenza">
   <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
-  <script type="module" src="/js/register-sw.js">
-  </script>
+  <script type="module" src="/js/register-sw.js"></script>
+  <script type="module" src="/js/sw-plugin.js"></script>
   <link rel="apple-touch-icon" href="/images/icon57.png" />
   <link rel="icon" href="/images/favicon.ico">
   <meta name="theme-color" content="#054560" />
@@ -33,10 +33,23 @@
 </head>
 
 <body>
+
   <div id="root"></div>
   <script src="/js/topbar_index.js"></script>
   <script type="text/javascript" src="js/parse_rss.js"></script>
+  <script src="/js/cachedelete.js"></script>
   <script src="/js/firebaseconfig.js"></script>
+  <script>
+function deletecache() {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+         registration.unregister()
+       } })
+    caches.delete('1bcremonablog-app');
+    window.location['reload']()
+}
+
+  </script>
    </body>
 
 </html>

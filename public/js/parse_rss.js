@@ -21,6 +21,8 @@ fetch(proxyurl+rss_url)
             </h1>
                     </div></div>`;
         });
-
+        html += `
+        <div class="chachedelbut" align="center"><button onclick="deletecache()">Aggi0rona l'app</button></div>
+        `;
     document.getElementById("root").innerHTML += html;
     });
