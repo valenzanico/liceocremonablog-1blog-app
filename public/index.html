@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1bcremonablog app</title>
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/7.15.2/firebase-app.js"></script>
@@ -14,8 +14,11 @@
   <script defer src="/__/firebase/7.15.2/firebase-storage.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
+  <script type="text/javascript" src="/js/sharepage.js"></script>
+  <script type="text/javascript" src="/js/sidenav.js"></script>
   <script type="text/javascript">sessionStorage.removeItem("linkarticle1bcremonablog");</script>
   <script type="text/javascript">sessionStorage.removeItem("titlearticle1bcremonablog");</script>
+  <script>sessionStorage.removeItem("article_page");</script>
   <link rel="stylesheet" href="stylesheets/style1.css">
   <link rel="stylesheet" href="stylesheets/style_rss.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -28,7 +31,6 @@
   <link rel="icon" href="/images/favicon.ico">
   <meta name="theme-color" content="#054560" />
   <script src="https://unpkg.com/pwabuilder-components@latest"></script>
-  <script type="text/javascript" src="/js/sharepage.js"></script>
 
 </head>
 
@@ -36,17 +38,36 @@
 
   <div id="root"></div>
   <script src="/js/topbar_index.js"></script>
+  <script src="/js/sidenav_index.js"></script>
   <script type="text/javascript" src="js/parse_rss.js"></script>
+  <!-- <script>if (navigator.onLine == true) {
+    document.getElementsByTagName("body").innerHTML +=  `<script type="text/javascript" src="js/parse_rss.js"></script>`;  
+  }
+  else {
+    document.getElementById("root").innerHTML += `<div class="articlecontainer">
+        <div class="article">
+          <h1>Sei offline, se vuoi puoi leggere gli articoli che hai salvato</h1>
+                    </div></div>`
+  }
+
+    </script> -->
   <script src="/js/cachedelete.js"></script>
   <script src="/js/firebaseconfig.js"></script>
   <script>
 function deletecache() {
+  if (navigator.onLine == true) {
+
+
     navigator.serviceWorker.getRegistrations().then(function(registrations) {
         for(let registration of registrations) {
          registration.unregister()
        } })
     caches.delete('1bcremonablog-app');
     window.location['reload']()
+      }
+      else {
+        document.getElementById("update").innerText = "Sei offline";
+      }
 }
 
   </script>

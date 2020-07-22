@@ -2,28 +2,29 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leggi l'articolo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/reader.css">
     <style media="screen">
     </style>
     <meta name="application-name" content="1bcremonablog app">
     <meta name="author" content="Nicolò Valenza">
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
     <script type="module" src="/js/register-sw.js"></script>
     <script type="module" src="/js/sw-plugin.js"></script>
     <link rel="apple-touch-icon" href="/images/icon57.png" />
     <link rel="icon" href="/images/favicon.ico">
     <meta name="theme-color" content="#054560" />
+    <script type="text/javascript" src="/js/articolo_script.js"></script>
   </head>
   <body>
     <header>
       <div class="topbar">
         <b>Leggi l'articolo</b>
-        <a href="/"><button class="buttonstyle">indietro</button></a>
+        <button id="butsave" onclick="save()">Salva l'articolo offline</button>
+        <a href="/"><button class="buttonstyle" onclick="removesession()">indietro</button></a>
       </div>
     </header>
     <script type="text/javascript" src="/js/parse_article.js">
