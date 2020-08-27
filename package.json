@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Eaglee0/1bcremonablog-app#readme",
   "dependencies": {
+    "@pwabuilder/pwainstall": "^1.6.6",
     "firebase-tools": "^8.6.0"
   }
 }

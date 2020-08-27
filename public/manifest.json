@@ -20,8 +20,37 @@
 	"scope" : "/",
 	"theme_color" : "#054560",
 	"lang" : "Italian",
-	"screenshots" : [],
+	"screenshots" : [
+		{
+			"src": "/images/screenshot1.jpg"
+		},
+		{
+			"src": "/images/screenshot2.jpg"
+		},
+		{
+			"src": "/images/screenshot3.jpg"
+		},
+		{
+			"src": "/images/screenshot4.jpg"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Articoli salvati",
+			"short_name": "Articoli salvati",
+			"description": "Leggi gli articoli che hai salvato in precedenza",
+			"url": "/offlinepage",
+			"icons": [{"src": "/images/icon192.png", "sizes": "192x192"}]
+		}
+	],
 	"orientation" : "any",
 	"description" : "L'applicazione di 1bcremonablog.com",
+    "features": [
+		"Lettura offline degli articoli",
+		"Aggironamenti rapidi",
+		"Notifiche"
+	  ],
+	"related_applications": [],
+	"prefer_related_applications": false,
 	"generated" : ""
 }

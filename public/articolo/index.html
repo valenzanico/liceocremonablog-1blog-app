@@ -12,8 +12,11 @@
     <meta name="application-name" content="1bcremonablog app">
     <meta name="author" content="Nicolò Valenza">
     <link rel="manifest" href="/manifest.json"> <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
-    <script type="module" src="/js/register-sw.js"></script>
-    <script type="module" src="/js/sw-plugin.js"></script>
+    <script type="module">if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    };</script>
     <link rel="apple-touch-icon" href="/images/icon57.png" />
     <link rel="icon" href="/images/favicon.ico">
     <meta name="theme-color" content="#054560" />
