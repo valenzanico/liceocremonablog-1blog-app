@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- index file of the application -->
 <html>
 
 <head>
@@ -14,20 +15,22 @@
   <script defer src="/__/firebase/7.15.2/firebase-storage.js"></script> -->
   <!-- initialize the SDK after all desired features are loaded -->
   <!-- <script defer src="/__/firebase/init.js"></script> -->
-  <script async type="text/javascript" src="/js/sharepage.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/style1.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- include jquery framework and google fonts -->
+  <link rel="stylesheet" href="stylesheets/style1.css"> <!-- iclude css file -->
   <meta name="application-name" content="1bcremonablog app">
   <meta name="author" content="Nicolò Valenza">
-  <link rel="manifest" href="/manifest.json">
-  <!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
+  <link rel="manifest" href="/manifest.json"><!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
   <script type="module">if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js');
     });
-  };</script>
-  <link rel="apple-touch-icon" href="/images/icon57.png" />
+  };</script><!--service workers registration -->
+  <script async type="text/javascript" src="js/sharepage.js"></script><!--share function-->
+  <script async type="text/javascript" src="js/deletecache.js"></script><!--update app function-->
+  <script async type="text/javascript" src="js/navfunc.js"></script><!--open and close nnabar function--><!-- include external js file and function -->
+  <script async type="text/javascript" src="js/savearticle.js"></script><!--save artticle function-->
+  <link rel="apple-touch-icon" href="/images/icon57.png" /><!--apple devices spalsh screen-->
   <link rel="icon" href="/images/favicon.ico">
   <meta name="theme-color" content="#054560" />
 
@@ -35,9 +38,9 @@
 
 <body>
 
-  <div id="root"></div>
+  <div id="root" class="root"></div><!--html root div element-->
 
-  <script type="module" src="index.js"></script>
+  <script type="module" src="app.js"></script> <!-- iclude app js files -->
   <!-- <script>if (navigator.onLine == true) {
     document.getElementsByTagName("body").innerHTML +=  `<script type="text/javascript" src="js/parse_rss.js"></script>`;  
   }
@@ -49,46 +52,6 @@
   }
 
     </script> -->
-  <script async>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-
-    function deletecache() {
-      if (navigator.onLine == true) {
-
-
-        navigator.serviceWorker.getRegistrations().then(function (registrations) {
-          for (let registration of registrations) {
-            registration.unregister()
-          }
-        })
-        caches.delete('1bcremonablog-app');
-        window.location['reload']()
-      } else {
-        document.getElementById("update").innerText = "Sei offline";
-      }
-    }
-
-    function save() {
-      var htmlpage = sessionStorage.getItem("article_page");
-      console.log(htmlpage);
-      var url_art = sessionStorage.getItem("url_art_x_offline");
-      localStorage.setItem(url_art, htmlpage);
-      var offline_article_list_el =
-        `<li><a href="/readoffline"><button id="listbut" onclick="sessionStorage.setItem('url_art_offline','${url_art}')">${url_art}</button></a></li>`;
-      var list_el = localStorage.getItem("list_offlinepage");
-      list_el += offline_article_list_el;
-      localStorage.removeItem("list_offlinepage");
-      localStorage.setItem("list_offlinepage", list_el);
-      sessionStorage.removeItem("article_page");
-      sessionStorage.removeItem("url_art_x_offline");
-    };
-  </script>
 </body>
 
 </html>

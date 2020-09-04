@@ -68,7 +68,7 @@ body {
   background-color: #054560;
 }`
 
-const addstyle = () => {
+const addstyle = () => {// add custom page style to head element
   var stylesheet = document.createElement("style");
   stylesheet.innerHTML += style
   document.getElementsByTagName("head")[0].appendChild(stylesheet)
@@ -78,8 +78,8 @@ const addstyle = () => {
 function Article() {
   addstyle();
   const proxyurl = "https://proxy-1blogapp.herokuapp.com/";
-  const url_art = sessionStorage.getItem("linkarticle1bcremonablog");
-  localStorage.setItem("url_art_stor", url_art)
+  const url_art = sessionStorage.getItem("linkarticle1bcremonablog");//get link from session storage
+  localStorage.setItem("url_art_stor", url_art);//set session storage to save article
   sessionStorage.removeItem("titlearticle1bcremonablog");
   sessionStorage.removeItem("article_page");
   sessionStorage.removeItem("linkarticle1bcremonablog");
@@ -91,8 +91,8 @@ function Article() {
       <button id="butsave" onclick="save()">Salva l'articolo offline</button>
       <a href="/"><button class="buttonstyle" onclick="removesession()">indietro</button></a>
     </div>
-  </header><div class="lds-ring"><div></div><div></div><div></div><div>`
-  fetch(proxyurl + url_art)
+  </header><div class="lds-ring"><div></div><div></div><div></div><div>`//inner html top bar in root element
+  fetch(proxyurl + url_art)//fetch html articlody to get the arrtcle bp
     .then(response => response.text())
     .then(data => {
       console.log(typeof data);
@@ -108,7 +108,7 @@ function Article() {
       var page = `<article class="article"><div class="all-article" style="font-family: 'Oswald', sans-serif;
             font-size: 20px;
             color:#cccccc;">${htmlarticle}</div></article>`;
-      document.getElementById("root").innerHTML += htmlpage;
+      document.getElementById("root").innerHTML += htmlpage;//inner article in root element
       $("#jp-post-flair").remove();
       $(".lds-ring").remove();
       sessionStorage.setItem("article_page", page);

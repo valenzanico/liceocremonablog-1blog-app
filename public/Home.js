@@ -66,7 +66,7 @@ function Home() {
   htmlsidenav();
   topbar();
   document.getElementById("root").innerHTML += `<div class="lds-ring"><div></div><div></div><div></div><div>`
-  fetch(proxyurl + rss_url)
+  fetch(proxyurl + rss_url)//fetch rss feeed to get articles list
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(data => {

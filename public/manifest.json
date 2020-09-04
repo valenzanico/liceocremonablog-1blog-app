@@ -39,7 +39,7 @@
 			"name": "Articoli salvati",
 			"short_name": "Articoli salvati",
 			"description": "Leggi gli articoli che hai salvato in precedenza",
-			"url": "/offlinepage",
+			"url": "/offlinearticle",
 			"icons": [{"src": "/images/icon192.png", "sizes": "192x192"}]
 		}
 	],

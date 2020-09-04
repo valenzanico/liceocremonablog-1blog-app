@@ -4,6 +4,7 @@ import topbar from './topbar_installpage.js';
 import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall";
 
 function mainpage() {
+  topbar();
   const explainer = "Questa applicazione può essere installata sul tuo PC o sul tuo Smartphone. Troverai quest'applicazione nealla tua lista di appse potrai aggiungerla alla home del tuo dispositivo. Quest'app inoltre si integrerà perfettamente con le altre apllicazioni e con il tuo sistema operativo."
     var root = document.getElementById("root");
     const mainwidgets = `<div class="bordi">
@@ -57,7 +58,7 @@ function mainpage() {
     root.innerHTML += mainwidgets;
 }
 
-topbar();
+
 mainpage();
 
  /* <button id="butInstall" class="buttonstyle" type="button">
