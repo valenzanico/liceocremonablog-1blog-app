@@ -3,7 +3,7 @@ function topbar(titolo){
     var topbarhtml = `
     <div class="topbar">
     <b>${titolo}</b>
-    <a href="/"><button class="returnbutton">indietro</button></a>
+    <a href="/offlinearticle"><button class="returnbutton">indietro</button></a>
 </div>
     `;
     topbarel.innerHTML += topbarhtml;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- index file of the application -->
-<html>
+<html lang="it">
 
 <head>
   <meta charset="utf-8">
@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="stylesheets/style1.css"> <!-- iclude css file -->
   <meta name="application-name" content="1bcremonablog app">
   <meta name="author" content="Nicolò Valenza">
+  <meta name="description" content="L'applicazione di 1bcremonablog.com">
   <link rel="manifest" href="/manifest.json"><!-- inclusione del file manifest per determinare le specifiche dell'applicaszione -->
   <script type="module">if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -39,7 +40,6 @@
 <body>
 
   <div id="root" class="root"></div><!--html root div element-->
-
   <script type="module" src="app.js"></script> <!-- iclude app js files -->
   <!-- <script>if (navigator.onLine == true) {
     document.getElementsByTagName("body").innerHTML +=  `<script type="text/javascript" src="js/parse_rss.js"></script>`;  
@@ -50,8 +50,8 @@
           <h1>Sei offline, se vuoi puoi leggere gli articoli che hai salvato</h1>
                     </div></div>`
   }
-
     </script> -->
+    <noscript>Devi attivare lo javascript nel tuo browser per usare l'app</noscript>
 </body>
 
 </html>
