@@ -83,8 +83,6 @@ function Article() {
   sessionStorage.removeItem("titlearticle1bcremonablog");
   sessionStorage.removeItem("article_page");
   sessionStorage.removeItem("linkarticle1bcremonablog");
-  const butsave = `<button id="butsave" onclick="save()">Salva l'articolo offline</button>`
-  console.log(url_art);
   document.getElementById("root").innerHTML = `<header>
     <div class="topbar">
       <b>Leggi l'articolo</b>
@@ -95,25 +93,28 @@ function Article() {
   fetch(proxyurl + url_art)//fetch html articlody to get the arrtcle bp
     .then(response => response.text())
     .then(data => {
-      console.log(typeof data);
-      var el = $('<div></div>');
-      var art_page = el.html(data);
+      let el = document.createElement("html");
+      let art_page = el.innerHTML = data;
       let htmlpage;
-      console.log($('.entry-content', art_page));
-      var htmlarticle = $('.entry-content', art_page)[0].innerHTML;
-      console.log(htmlarticle);
+      let parser = new DOMParser();
+      let parsedHtml = parser.parseFromString(data, 'text/html');
+      let htmlarticle = parsedHtml.getElementsByClassName("entry-content")[0].innerHTML;
       htmlpage += `<article><div class="all-article" style="font-family: 'Oswald', sans-serif;
             font-size: 20px;
             color:#cccccc;">${htmlarticle}</div></article>`;
-      var page = `<article class="article"><div class="all-article" style="font-family: 'Oswald', sans-serif;
+      let page = `<article class="article"><div class="all-article" style="font-family: 'Oswald', sans-serif;
             font-size: 20px;
             color:#cccccc;">${htmlarticle}</div></article>`;
       document.getElementById("root").innerHTML += htmlpage;//inner article in root element
-      $("#jp-post-flair").remove();
-      $(".lds-ring").remove();
+      let jp_post_flair = document.getElementById("jp-post-flair");
+      if (jp_post_flair === null) {/*pass*/ }
+      else { jp_post_flair.remove() }
+      document.getElementsByClassName("lds-ring")[0].remove();
       sessionStorage.setItem("article_page", page);
       sessionStorage.setItem("url_art_x_offline", url_art);
     });
 };
 
 export default Article;
+
+

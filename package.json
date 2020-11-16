@@ -1,7 +1,7 @@
 {
-  "name": "1blog-app",
-  "version": "1.0.0",
-  "description": "l'applicazione pwa di 1bcremonablog.com",
+  "name": "liceo-cremona-blog-app",
+  "version": "2.0.0",
+  "description": "l'applicazione pwa di liceocremonablog.it",
   "main": "public/index.html",
   "scripts": {
     "start": "firebase serve",

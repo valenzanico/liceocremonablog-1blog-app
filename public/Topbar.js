@@ -3,7 +3,7 @@ function topbar() {
     var topbarhtml = `
     <div class="topbar">
     <button id="opennavbtn" onclick="openNav()">&#9776; Menù</button>
-    <b>1bcremonablog app</b>
+    <b>liceocremonablog app</b>
 </div>
     `;
     topbarel.innerHTML += topbarhtml;

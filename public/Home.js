@@ -3,7 +3,7 @@ import topbar from './Topbar.js';
 //questo codiceesgue il parsing del feed rss ddi 1bcremona blog per cedere i nuovi artcoli
 //this code parse the rrs feed or 1bcremonablog.com to control new article
 const proxyurl = "https://proxy-1blogapp.herokuapp.com/";
-const rss_url = "https://1bcremonablog.com/feed/";
+const rss_url = "https://www.liceocremonablog.it/feed/";
 const style = `#root {
   margin: 1rem;
   display: grid;
@@ -75,7 +75,7 @@ function Home() {
       let html = ``;
       items.forEach(el => {
         var linkart = el.querySelector("link").innerHTML;
-        var titleart = el.querySelector("title").innerHTM;
+        var titleart = el.querySelector("title").innerHTML;
         html += `<div class="articlecontainer">
         <div class="article">
           <h1>
@@ -88,7 +88,7 @@ function Home() {
         <div class="chachedelbut" align="center"><button onclick="deletecache()">Aggi0rona l'app</button></div>
         `;
       document.getElementById("root").innerHTML += html;
-      $(".lds-ring").remove();
+      document.getElementsByClassName("lds-ring")[0].remove();
     });
 }
 
